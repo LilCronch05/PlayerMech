@@ -6,7 +6,7 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField]
     float movementSpeed = 30.0f, rotationSpeed = 100.0f, vInput, hInput, vInputMouse, hInputMouse;
-    public GameObject body;
+    public GameObject body, legs;
     Vector3 angles;
 
     //Jump variables
@@ -44,17 +44,18 @@ public class PlayerMover : MonoBehaviour
         hInputMouse = Input.GetAxis("Mouse X");
         vInputMouse = Input.GetAxis("Mouse Y");
 
-        transform.Translate(Vector3.forward * vInput * movementSpeed * Time.deltaTime);
-        transform.Translate(Vector3.right * hInput * movementSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * vInput * movementSpeed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.right * hInput * movementSpeed * Time.deltaTime, Space.Self);
+         //The legs will rotate to face the direction the player is moving
+        legs.transform.position = transform.position;
+        
         
         if (Input.GetKey(KeyCode.Space) && canJump)
         {
             rb.AddForce(0f, jumpSpeed * Time.deltaTime, 0f);
         }
-
-        //transform.Rotate(Vector3.up * hInputMouse * rotationSpeed * Time.deltaTime);
         
-        body.transform.Rotate(Vector3.left * hInputMouse * rotationSpeed * Time.deltaTime);
+        body.transform.Rotate(Vector3.up * hInputMouse * rotationSpeed * Time.deltaTime);
         angles = body.transform.localRotation.eulerAngles;
         if (angles.y > 35.0f && angles.y <= 180.0f)
         {
