@@ -45,10 +45,7 @@ public class PlayerMover : MonoBehaviour
         vInputMouse = Input.GetAxis("Mouse Y");
 
         transform.Translate(Vector3.forward * vInput * movementSpeed * Time.deltaTime, Space.Self);
-        transform.Translate(Vector3.right * hInput * movementSpeed * Time.deltaTime, Space.Self);
-         //The legs will rotate to face the direction the player is moving
-        legs.transform.position = transform.position;
-        
+        transform.Rotate(Vector3.up * hInput * rotationSpeed * Time.deltaTime);
         
         if (Input.GetKey(KeyCode.Space) && canJump)
         {
@@ -57,13 +54,13 @@ public class PlayerMover : MonoBehaviour
         
         body.transform.Rotate(Vector3.up * hInputMouse * rotationSpeed * Time.deltaTime);
         angles = body.transform.localRotation.eulerAngles;
-        if (angles.y > 35.0f && angles.y <= 180.0f)
+        if (angles.y > 90.0f && angles.y <= 180.0f)
         {
-            body.transform.localRotation = Quaternion.Euler(angles.x, 35.0f, angles.z);
+            body.transform.localRotation = Quaternion.Euler(angles.x, 90.0f, angles.z);
         }
-        if (angles.y < 320.0f && angles.y >= 180.0f)
+        if (angles.y < 270.0f && angles.y >= 180.0f)
         {
-            body.transform.localRotation = Quaternion.Euler(angles.x, 320.0f, angles.z);
+            body.transform.localRotation = Quaternion.Euler(angles.x, 270.0f, angles.z);
         }
     }
 }
