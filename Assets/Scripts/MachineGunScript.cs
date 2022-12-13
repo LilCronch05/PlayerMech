@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunScript : MonoBehaviour
+public class MachineGunScript : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform BulletSpawn;
@@ -13,7 +13,7 @@ public class GunScript : MonoBehaviour
     // Shoots the gun
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetKey("E"))
         {
             if (Time.time > nextFire)
             {

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    /*
     private Transform bullet;
-    float speed = 50.0f;
-    //public Vector3 direction;
+    float speed = 100.0f;
 
     private void Start()
     {
@@ -16,15 +14,23 @@ public class ProjectileController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime); 
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Target") //if the projectile hits the target
         { 
+            GameObject Enemy = collision.gameObject;
+            //EnemyScript enemyHealth = Enemy.GetComponent<EnemyScript> ();
+            //enemyHealth.health  -= 10;
+
+            Destroy(bullet.gameObject); //destroy the projectile
+        }
+
+        if(collision.gameObject.tag == "Bounds") //if the projectile hits the Arena
+        {
             Destroy(bullet.gameObject); //destroy the projectile
         }
     }
-    */
 }
