@@ -30,7 +30,7 @@ public class MachineGunScript : MonoBehaviour
         {
             gunSound.Play();
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             gunSound.Stop();
         }

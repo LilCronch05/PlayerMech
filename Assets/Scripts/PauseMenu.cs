@@ -8,11 +8,13 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject crosshair;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -26,11 +28,14 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 0;
                 pauseMenu.SetActive(true);
                 Cursor.visible = true;
+                crosshair.SetActive(false);
             }
             else
             {
                 Time.timeScale = 1;
                 pauseMenu.SetActive(false);
+                Cursor.visible = false;
+                crosshair.SetActive(true);
             }
         }
         

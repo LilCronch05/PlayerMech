@@ -30,7 +30,7 @@ public class GunScript : MonoBehaviour
         {
             gunSound.Play();
         }
-        else
+        else if (Input.GetButtonUp("Fire1"))
         {
             gunSound.Stop();
         }

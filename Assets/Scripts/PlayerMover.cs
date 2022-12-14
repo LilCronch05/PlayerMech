@@ -50,11 +50,11 @@ public class PlayerMover : MonoBehaviour
         transform.Translate(Vector3.forward * vInput * movementSpeed * Time.deltaTime, Space.Self);
         transform.Rotate(Vector3.up * hInput * rotationSpeed * Time.deltaTime);
         
-        if (vInput != 0 || hInput != 0)
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
         {
             walkingSound.Play();
         }
-        else
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
         {
             walkingSound.Stop();
         }

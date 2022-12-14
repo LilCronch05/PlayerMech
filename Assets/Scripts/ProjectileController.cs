@@ -32,5 +32,10 @@ public class ProjectileController : MonoBehaviour
         {
             Destroy(bullet.gameObject); //destroy the projectile
         }
+
+        if (collision.gameObject.layer == 0)
+        {
+            Destroy(bullet.gameObject); //destroy the projectile
+        }
     }
 }
