@@ -19,16 +19,16 @@ public class ProjectileController : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Target") //if the projectile hits the target
+        if(collision.gameObject.tag == "Enemy") //if the projectile hits the target
         { 
             GameObject Enemy = collision.gameObject;
-            //EnemyScript enemyHealth = Enemy.GetComponent<EnemyScript> ();
-            //enemyHealth.health  -= 10;
+            EnemyScript enemyHealth = Enemy.GetComponent<EnemyScript> ();
+            enemyHealth.health  -= 2;
 
             Destroy(bullet.gameObject); //destroy the projectile
         }
 
-        if(collision.gameObject.tag == "Bounds") //if the projectile hits the Arena
+        if(collision.gameObject.layer == 3) //The bullet will destroy itself if it hits a wall
         {
             Destroy(bullet.gameObject); //destroy the projectile
         }
