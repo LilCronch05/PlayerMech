@@ -7,10 +7,11 @@ public class EnemyScript : MonoBehaviour
 {
     NavMeshAgent agent;
     public float health = 100.0f;
-
+    public Transform player;
     public Transform[] waypoints;
     private int currentWaypoint;
     float timer;
+    bool isInRange;
 
     void Start()
     {
@@ -29,6 +30,19 @@ public class EnemyScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (isInRange || health < 100)
+        {
+            agent.SetDestination(player.position);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isInRange = true;
         }
     }
 }

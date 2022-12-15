@@ -7,7 +7,7 @@ using TMPro;
 public class CannonShoot : MonoBehaviour
 {
     public GameObject cannonBall;
-    public GameObject[] cannonBallCount;
+    public int cannonBallCount = 5;
     public Transform cannonBallSpawn;
     public float shotForce = 1500f;
     public ParticleSystem muzzleFlash;
@@ -28,8 +28,10 @@ public class CannonShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        remainingRocketsText.text = ("Rockets: " + cannonBallCount);
+        
         // If the left mouse button is clicked, shoot the cannon ball
-        if (Input.GetKeyDown(KeyCode.Q) && cannonBallCount.Length < 1)
+        if (Input.GetKeyDown(KeyCode.Q) && cannonBallCount > 0)
         {
             //Play particle effect
             muzzleFlash.Play();
@@ -41,12 +43,10 @@ public class CannonShoot : MonoBehaviour
             //recoilAnim.Play();    
 
             Shoot();
+            cannonBallCount--;
         }
         
-        cannonBallCount = GameObject.FindGameObjectsWithTag("Rocket");
-        remainingRocketsText.text = ("Rockets: " + cannonBallCount.Length.ToString());
-
-        if (cannonBallCount.Length == 0)
+        if (cannonBallCount == 0)
         {
             remainingRocketsText.text = ("Rockets: 0");
         }

@@ -33,7 +33,7 @@ public class ProjectileController : MonoBehaviour
             Destroy(bullet.gameObject); //destroy the projectile
         }
 
-        if (collision.gameObject.layer == 0)
+        if (collision.gameObject.tag == "Untagged")
         {
             Destroy(bullet.gameObject); //destroy the projectile
         }

@@ -1,0 +1,43 @@
+1. Mech has base, torso, cockpit, shoulders, and arms.
+2. base can move forwards and backwards
+3. the mech has a working walking sound
+4. the base can rotate left and right
+5. the torso can rotate independent from the base
+6. the torso clamps at 90 degrees on each side
+7. the shoulders can raise up and down
+8. the shoulders clamp at 45 degrees
+9. there is a first-person camera from the cockpit view
+10. there are four weapon slots
+11. There are 3 types of weapons
+12. (N/A) (All weapons are active)
+13. (N/A) (All weapons can be fired)
+14. (N/A) (Not every weapon has a particle effect when shooting)
+15. Every weapon makes a firing shot
+16. Each weapon fires a projectile
+17. The "Rocket" projectile creates an explosion
+18. The explosion does a lot of damage
+19. The explosion has a particle effect
+20. (N/A) (The explosion doesn't always make sound)
+21. (N/A) (All weapons are projectiles)
+22. (N/A) (No weapons can be placed in the world)
+23. (N/A) (There are no weapons laying around in the world)
+24. (N/A) (No weapons can be picked up)
+25. (Partial) The weapons that are attached are parented properly (But there are no weapons that aren't attached)
+26. (Partial) The "Rocket" has limited ammo (There aren't any ammo drops)
+27. The UI prompts the player to use the shoulder mounted weapons
+28. (N/A) (All weapons are active)
+29. (N/A) (The mech doesn't have any armor)
+30. (N/A) (The mech doesn't have any armor)
+31. (N/A) (There aren't any destroyable structures)
+32. (N/A) (There aren't any destroyable structures)
+33. There are 10 enemies
+34. (Partial) The enemies approach/chase the player if they get too close or are attacked
+35. When all enemies are destroyed, the "remaining enemy" message changes to say they are all defeated
+36. (N/A) There are no damage numbers
+37. (Partial) There is a crosshair (It does not show the approx. distance)
+38. There is a monitor with a top-down camera in the cockpit
+39. There is a proper Game Screen
+40. The escape key brings up a pause menu
+41. The pause menu includes a "continue game", a "quit game", and a "return to menu" button
+42. Pressing either escape or "continue game" returns us back to the game
+43. Pressing the "Menu" button returns the player back to the menu
